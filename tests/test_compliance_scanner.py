@@ -48,9 +48,9 @@ LOG_LEVEL = logging.INFO
 audit_logger = logging.getLogger('audit')
 """)
     (tmp_path / "SECURITY.md").write_text("# Security Policy\nReport vulnerabilities here.")
-    (tmp_path / ".github" / "dependabot.yml").write_text("version: 2\nupdates: []")
-    Path(tmp_path / ".github").mkdir(exist_ok=True)
-    (tmp_path / ".github" / "dependabot.yml").write_text("version: 2\nupdates: []")
+    gh_dir = tmp_path / ".github"
+    gh_dir.mkdir(exist_ok=True)
+    (gh_dir / "dependabot.yml").write_text("version: 2\nupdates: []")
     return tmp_path
 
 
